@@ -1,0 +1,958 @@
+/*
+border-box 上からFirefox,Safari3,IE8,Opera,*/
+* {
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+    font-style:normal;
+    font-variant:normal;
+    }
+    
+    /*tags
+    --------------------------------------------------------------------*/
+    body,form,div {
+    margin:0;
+    padding:0;
+    }
+    
+    img {
+    border:none;
+    }
+    
+    h1,h2,h3,h4,h5,h6,p,table,ul,ol,dl {
+    margin:1em 0;
+    padding:0;
+    }
+    
+    ul,ol {
+    line-height:130%;
+    margin:1em;
+    padding-left:3em;
+    }
+    
+    li {
+    margin:.5em 0;
+    }
+    
+    body {
+    /*text-align: left;*/
+    /*左寄せ*/
+    text-align:center;
+    /*中央寄せ containerのマージンも修正する*/
+    background:#FFFFFF;
+    color:#000000;
+    }
+    
+    h1 {
+    margin:0 -10px 10px;
+    border-bottom:solid 1px #DCDADA;
+    }
+    
+    h2 {
+    font-size:180%;
+    font-weight:bold;
+    font-family:メイリオ, "ＭＳ Ｐゴシック", Osaka, Sans-serif;
+    color:#000000;
+    margin:10px 0;
+    padding:5px;
+    width:780px;
+    height:50px;
+    border:none;
+    line-height:100%;
+    clear:both;
+    background:url(img/h2.gif) no-repeat bottom #474598;
+    }
+    
+    h3 {
+    font-size:110%;
+    font-weight:bold;
+    font-family:メイリオ,"ＭＳ Ｐゴシック", Osaka, Sans-serif;
+    color:#111111;
+    margin:1em 20px;
+    padding:10px 5px 0 10px;
+    line-height:120%;
+    width:auto;
+    height:30px;
+    background:url(img/h3.gif) #E90089;
+    border:solid 1px #D6D6D6;
+    border-top:none;
+    }
+    
+    p {
+    line-height:130%;
+    margin:1em 20px;
+    }
+    
+    table {
+    margin:1em 40px;
+    width:700px;
+    }
+    
+    table,td,th {
+    border:1px solid #B3B3B3;
+    border-collapse:collapse;
+    }
+    
+    td,th {
+    font-size:80%;
+    padding:5px;
+    }
+    
+    th {
+    text-align:right;
+    background:#EBEBEB;
+    color:#111111;
+    }
+    
+    hr {
+    clear:both;
+    visibility:hidden;
+    margin:0;
+    }
+    
+    /*共通
+    -----------------------------------------------------------------------------------------*/
+    /*リンク*/
+    a:link {
+    color:#009;
+    text-decoration:underline;
+    }
+    
+    a:visited {
+    color:#009;
+    text-decoration:underline;
+    }
+    
+    a:hover {
+    color:#009;
+    text-decoration:underline;
+    }
+    
+    a:active {
+    color:#009;
+    text-decoration:underline;
+    }
+    
+    /*pおよびテキスト関連*/
+    .form {
+    text-align:center;
+    margin:20px 0;
+    }
+    
+    /*ボタン風　テキストにもinput type buttonにも*/
+    .button {
+    line-height:140%;
+    margin:20px auto 0;
+    border:solid 1px #b3b3b3;
+    width:20em;
+    padding:3px;
+    background:url(img/button.gif) 50% 50%;
+    list-style:none;
+    text-align:center;
+    }
+    
+    /*戻るボタン*/
+    ul.return {
+    margin:10px 0 20px;
+    padding:0;
+    }
+    
+    .return li {
+    background:url(img/return.gif) no-repeat;
+    height:20px;
+    margin:10px 0 20px;
+    padding:0 5px 0 10px;
+    border:solid 1px #999999;
+    width:200px;
+    text-align:center;
+    list-style:none;
+    }
+    
+    /*ボタン風のリンク*/
+    .button a:link,.return a:link {
+    color:#FF0000;
+    font-weight:bold;
+    }
+    
+    .button a:visited,.return a:visited {
+    color:#FF0000;
+    font-weight:bold;
+    }
+    
+    .button a:hover,.return a:hover {
+    color:#FF0000;
+    font-weight:bold;
+    }
+    
+    .button a:active,.return a:active {
+    color:#FF0000;
+    font-weight:bold;
+    }
+    
+    /*行頭※*/
+    .notice {
+    margin:0 1em;
+    }
+    
+    .notice {
+    color:#FF0000;
+    }
+    
+    /*table内のp.noticeとp.form*/
+    table p.notice,table p.form {
+    margin:0;
+    font-weight:normal;
+    line-height:120%;
+    padding:0;
+    }
+    
+    /*重要*/
+    .important {
+    color:#FF0000;
+    padding-left:3px;
+    }
+    
+    /*ログイン*/
+    table#login {
+    border:solid 1px #999999;
+    border-left:none;
+    border-right:none;
+    }
+    
+    table#login th,table#login td {
+    border:dotted 1px #999999;
+    border-left:none;
+    border-right:none;
+    }
+    
+    table#login th {
+    text-align:left;
+    color:#666666;
+    background-color:#F3F0E9;
+    }
+    
+    table#login td {
+    background-color:#FFFFFF;
+    }
+    
+    /*管理画面
+    -----------------------------------------------------------------------------------------*/
+    /*ナビゲーション
+    ----------------------------------------------- */
+    #navigation {
+    text-align:center;
+    width:780px;
+    height:26px;
+    margin:0;
+    padding:0;
+    }
+    
+    ul#globalNavi {
+    font:12px メイリオ,"ＭＳ Ｐゴシック", Osaka , Sans-serif;
+    font-weight:bold;
+    margin:0;
+    /* width＋左右マージン＝navigation幅（800px） */
+    padding:0;
+    width:780px;
+    /* 必ずwidthの設定をしてください */
+    text-align:center;
+    /* for MacIE5.x \*/
+    /*/
+     overflow: hidden;
+     /* end */
+    }
+    
+    ul#globalNavi:after {
+    height:0;
+    visibility:hidden;
+    content:".";
+    display:block;
+    clear:both;
+    }
+    
+    ul#globalNavi li {
+    margin:0 10px 10px 0;
+    padding:0;
+    float:left;
+    width:140px;
+    /* ボタンの幅 */
+    height:26px;
+    /* ボタンの高さ */
+    line-height:16px;
+    list-style-type:none;
+    background:url(img/navigation/li.gif) no-repeat transparent;
+    background-position:left top;
+    }
+    
+    ul#globalNavi li.menu {
+    margin:0 10px 10px 0;
+    padding:0;
+    clear:both;
+    width:140px;
+    /* ボタンの幅 */
+    height:26px;
+    /* ボタンの高さ */
+    line-height:16px;
+    list-style-type:none;
+    background:url(img/navigation/li.gif) repeat-x transparent;
+    background-position:left top;
+    }
+    
+    ul#globalNavi li.notes {
+    margin:0 10px 10px 0;
+    padding:7px 10px 3px;
+    width:600px;
+    /* ボタンの幅 */
+    height:28px;
+    /* ボタンの高さ */
+    line-height:16px;
+    list-style-type:none;
+    float:left;
+    background:none;
+    text-align:left;
+    }
+    
+    ul#globalNavi li a {
+    padding:7px 5px 3px;
+    /* 文字の位置 */
+    display:block;
+    position:relative;
+    /* IE6でマウス反応領域がおかしいのをFix */
+    outline:none;
+    text-decoration:none;
+    color:#000000;
+    line-height:16px;
+    height:26px;
+    width:140px;
+    border:solid 1px #B3B3B3;
+    }
+    
+    ul#globalNavi li a:hover {
+    background:url(img/navigation/active.gif) repeat-x transparent;
+    background-position:left top;
+    color:#FFFFFF;
+    border:solid 1px #000000;
+    outline:none;
+    }
+    
+    /*ログアウト*/
+    ul.logout {
+    margin:5px 0 0 680px;
+    padding:0;
+    width:100px;
+    }
+    
+    ul.logout li {
+    background:url(img/return.gif) no-repeat;
+    height:20px;
+    margin:5px 0 20px;
+    padding:0 5px 0 15px;
+    border:solid 1px #999999;
+    width:100px;
+    text-align:center;
+    list-style:none;
+    font-weight:bold;
+    }
+    
+    /*サブメニュー
+    --------------------------------------------------------------------*/
+    #submenu {
+    margin:10px 0 20px;
+    padding:0;
+    width:780px;
+    }
+    
+    #submenu li {
+    float:left;
+    list-style:none;
+    margin:0 10px 0 0;
+    padding:0 3px;
+    background:url(img/button.gif) 50% 50%;
+    border:solid 1px #ADB9C2;
+    width:13em;
+    text-align:center;
+    }
+    
+    /*ids
+    --------------------------------------------------------------------*/
+    #container {
+    /*margin:0 10px;*/
+    /*左寄せ*/
+    margin:0 auto;
+    /*中央寄せ ↑bodyのtext-alignも修正する*/
+    border:solid 1px #C0C0C0;
+    border-top:none;
+    width:802px;
+    background:#FFFFFF;
+    }
+    
+    /*comfirm用*/
+    .container {
+    /*margin:0 10px;*/
+    /*左寄せ*/
+    margin:0 auto;
+    /*中央寄せ ↑bodyのtext-alignも修正する*/
+    border:solid 1px #C0C0C0;
+    width:802px;
+    background:#FFFFFF;
+    font-size:80%;
+    }
+    
+    #information {
+    border:none;
+    margin:0;
+    text-align:right;
+    padding:0;
+    clear:  both;
+    }
+    
+    #information p {
+    margin:0;
+    }
+    
+    #id {
+    text-align:left;
+    margin:1em 0;
+    }
+    
+    #from,.right{
+    text-align:right;
+    }
+    
+    #next,.center{
+    text-align:center;
+    }
+    
+    #copyright {
+    width:800px;
+    height:50px;
+    font-size:80%;
+    margin:20px -10px 0;
+    padding:0;
+    clear:both;
+    border-top:none;
+    border-bottom:none;
+    }
+    
+    .container #copyright {
+    font-size:70%;
+    margin:20px 0;
+    }
+    
+    /*現在の抽出条件・id登録完了
+    --------------------------------------------------------------------*/
+    #nowparameter,#registReg {
+    padding:10px 5px;
+    margin:1em 20px;
+    width:740px;
+    background:#EEEEEE;
+    border:solid 1px #adb9c2;
+    }
+    
+    #nowparameter dt {
+    font-weight:bold;
+    display:block;
+    float:none;
+    line-height:150%;
+    margin:0 0 10px;
+    }
+    
+    #nowparameter dd {
+    display:block;
+    line-height:140%;
+    float:none;
+    margin:0 10px;
+    }
+    
+    #registReg {
+    padding:10px;
+    }
+    
+    #registReg p {
+    margin:0 10px;
+    }
+    
+    #registReg ul li {
+    margin:0;
+    }
+    
+    #registReg ul li dl {
+    margin:0;
+    font-weight:normal;
+    }
+    
+    #registReg ul li dl dd {
+    padding:0;
+    margin:0 0 0 1em;
+    }
+    
+    #registReg ul li {
+    margin:0 0 1em;
+    font-weight:bold;
+    }
+    
+    .registration {
+    width:385px;
+    margin:20px 0;
+    padding:0;
+    border:solid 1px #ADB9C2;
+    float:left;
+    background:#FFFFFF;
+    }
+    
+    .delivery {
+    width:385px;
+    margin:20px 0;
+    padding:0;
+    border:solid 1px #ADB9C2;
+    float:right;
+    background:#FFFFFF;
+    }
+    
+    .registration ul,.delivery ul {
+    margin:0;
+    padding:0;
+    }
+    
+    .registration ul li,.delivery ul li {
+    list-style:none;
+    margin:0 0 1em;
+    padding:0;
+    }
+    
+    /*該当件数表示・ダウンロード周り
+    --------------------------------------------------------------------*/
+    /*結果*/
+    #result {
+    width:740px;
+    margin:1em 20px;
+    padding:10px 0;
+    }
+    
+    /*件数表示*/
+    #count {
+    padding:5px;
+    margin:0;
+    background:#EEEEEE;
+    border:solid 1px #adb9c2;
+    width:340px;
+    float:left;
+    text-align:right;
+    }
+    
+    #count p {
+    text-align:left;
+    margin:0;
+    }
+    
+    #count dd {
+    }
+    
+    /*comfirm.htmlで使用*/
+    #datadl {
+    padding:5px;
+    margin:0 0 0 20px;
+    width:380px;
+    background:#EEEEEE;
+    border:solid 1px #adb9c2;
+    text-align:right;
+    float:left;
+    }
+    
+    #datadl p {
+    padding:0;
+    margin:0;
+    text-align:left;
+    font-weight:bold;
+    }
+    
+    /*download_sub.html周辺で*/
+    #datadlSub {
+    padding:5px;
+    margin:10px auto;
+    background:#EEEEEE;
+    border:solid 1px #adb9c2;
+    float:none;
+    width:300px;
+    }
+    
+    #datadlSub dt {
+    font-weight:bold;
+    line-height:150%;
+    margin:0 0 10px;
+    }
+    
+    #datadlSub dd {
+    margin:0;
+    line-height:140%;
+    }
+    
+    /*classes
+    --------------------------------------------------------------------*/
+    .viewer {
+    width:100%;
+    padding:0;
+    margin:10px 0;
+    text-align:center;
+    }
+    
+    /*受検者一覧:ページ送り部分*/
+    ul.pages {
+    margin:10px;
+    padding:0;
+    background:#CCCCCC;
+    }
+    
+    ul.pages li {
+    font-size:80%;
+    font-family:Arial,Verdana, Sans-serif;
+    margin:0 10px 0 0;
+    padding:0 2px;
+    list-style:none;
+    display:inline;
+    }
+    
+    ul.pages li.prev,ul.pages li.next {
+    }
+    
+    /*今ここ　受検者一覧:今いるページ*/
+    .herenow {
+    color:#FF0000;
+    font-weight:bold;
+    }
+    
+    .warns {
+    font-size:70%;
+    }
+    
+    /*tables
+    --------------------------------------------------------------------*/
+    /*受検者一覧
+    --------------------------------------------------------------------*/
+    table#entryStatus {
+    width:auto;
+    margin:10px auto;
+    /*センター寄せのとき必ず横マージンをautoに*/
+    border:solid 1px #000000;
+    clear:both;
+    background:#FFFFFF;
+    }
+    
+    table#entryStatus th {
+    width:auto;
+    background:#c8c8c8;
+    min-width:5em;
+    max-width:10em;
+    text-align:center;
+    }
+    
+    table#entryStatus td {
+    width:auto;
+    }
+    
+    table#entryStatus .name {
+    min-width:5em;
+    max-width:10em;
+    }
+    
+    table#entryStatus .subject {
+    min-width:8em;
+    max-width:10em;
+    text-align:center;
+    }
+    
+    table#entryStatus .detail {
+    min-width:2em;
+    max-width:3em;
+    text-align:center;
+    }
+    
+    /*検索条件設定
+    --------------------------------------------------------------------*/
+    table.parameterConfig {
+    width:780px;
+    margin:1em 0;
+    }
+    
+    table.parameterConfig tr {
+    clear:both;
+    }
+    
+    table.parameterConfig th,table.parameterConfig td {
+    padding:5px 5px 5px 10px;
+    width:auto;
+    }
+    
+    table.parameterConfig th {
+    text-align:right;
+    background:#EBEBEB;
+    color:#111111;
+    width:20%;
+    }
+    
+    /*始点～終点*/
+    .start {
+    float:left;
+    width:238px;
+    padding:7px 0 0;
+    height:50px;
+    }
+    
+    .tilde {
+    float:left;
+    width:16px;
+    margin:10px;
+    text-align:center;
+    height:15px;
+    font-size:16px;
+    }
+    
+    .end {
+    float:left;
+    width:248px;
+    padding:7px 0 0 10px;
+    height:50px;
+    }
+    
+    /*ファイルレイアウト確認・ユーザー情報設定*/
+    table.fmtlist,table#userlist {
+    width:780px;
+    margin:1em 0;
+    }
+    
+    table.fmtlist th,table#userlist th {
+    text-align:left;
+    width:auto;
+    }
+    
+    /*数字っぽいとこと必須*/
+    table.fmtlist .int,table.fmtlist .must {
+    text-align:center;
+    }
+    
+    /*idリスト登録確認*/
+    div.wrap {
+    margin:0;
+    padding:0;
+    }
+    
+    div.idlist {
+    float:left;
+    width:250px;
+    margin:0;
+    padding:0;
+    }
+    
+    div.property {
+    float:right;
+    width:520px;
+    margin:0;
+    padding:0;
+    }
+    
+    table.idlist {
+    width:250px;
+    margin:0;
+    }
+    
+    table.property {
+    width:520px;
+    margin:0;
+    }
+    
+    table.idlist td,table.idlist th {
+    padding:5px;
+    width:auto;
+    text-align:center;
+    }
+    
+    table.idlist .check {
+    width:40px;
+    }
+    
+    table.idlist .name {
+    width:110px;
+    text-align:left;
+    }
+    
+    /*indexやnoscriptで使用*/
+    .alert {
+    font-size:80%;
+    width:780px;
+    border:2px solid #000000;
+    padding:10px;
+    margin:1em auto;
+    /*センター寄せのとき必ず横マージンをautoに*/
+    background:#FFFFFF;
+    text-align:left;
+    }
+    
+    .alert h2 {
+    margin:.5em 0;
+    width:760px;
+    background:repeat;
+    border:none;
+    }
+    
+    /*受検画面
+    -----------------------------------------------------------------------------------------*/
+    /*強調*/
+    .important {
+    color:#FF0000;
+    padding-left:3px;
+    }
+    
+    /*前置き、あとがき*/
+    .intro,.outro {
+    margin:1em;
+    padding:1em;
+    }
+    
+    /*時間割*/
+    .timetable {
+    color:#000000;
+    margin:1em 90px;
+    padding:10px;
+    width:600px;
+    border:solid 1px #C0C0C0;
+    background:#FFFFFF;
+    }
+    
+    .timetable p {
+    margin:0;
+    padding:0 0 0 5px;
+    color:#000000;
+    background-color:transparent;
+    }
+    
+    .timetable li {
+    font-weight:bold;
+    background-color:transparent;
+    margin: 0 0 20px 30px;
+    }
+    
+    .timetable .detail {
+    color:#000000;
+    font-weight:normal;
+    margin:2px;
+    padding:2px 0 0 30px;
+    height:15px;
+    background:url(img/detail.gif) no-repeat 5px 55% transparent;
+    text-indent:0px;
+    border-bottom:none;
+    clear:both;
+    }
+    
+    img.button {
+    border:none;
+    background:none;
+    text-align:center;
+    float:right;
+    width:82px;
+    height:19px;
+    line-height:normal;
+    margin:0;
+    padding:0;
+    }
+    
+    /*動作環境*/
+    table.require {
+    border:solid 1px #999999;
+    border-left:none;
+    border-right:none;
+    }
+    
+    table.require th,table.require td {
+    border:dotted 1px #999999;
+    border-left:none;
+    border-right:none;
+    padding:10px;
+    }
+    
+    table.require th {
+    text-align:left;
+    color:#666666;
+    background-color:#F3F0E9;
+    }
+    
+    /*受検期間*/
+    p.limit {
+    font-weight:bold;
+    color:#000000;
+    margin:1em 20px;
+    padding:10px;
+    text-align:center;
+    background:url(img/h2.gif) #FFFFFF;
+    border:1px solid #C90900;
+    }
+    
+    /*パーソナリティ*/
+    table.personality {
+    border:1px solid #A8A8A8;
+    }
+    
+    table.personality th {
+    background:#ECECEC;
+    }
+    
+    table.personality td {
+    padding:3px;
+    border:1px solid #A8A8A8;
+    background-color:#FFFFFF;
+    }
+    
+    .personality .yes {
+    padding:3px;
+    width:8%;
+    background-color:#E2F6FD;
+    text-align:center;
+    }
+    
+    .personality .no {
+    padding:3px;
+    width:8%;
+    background-color:#f9e2fd;
+    text-align:center;
+    }
+    
+    .personality .article {
+    padding:3px;
+    color:#333333;
+    text-align:left;
+    width:60%;
+    }
+    
+    .personality .alfabet {
+    text-align:center;
+    }
+    
+    table.personality th.num {
+        font-size:30px;
+        font-family:Arial, Helvetica, sans-serif;
+        color:#777777;
+        text-align:center;
+    }
+    
+    table.personality th.qnum { text-align:center; }
+    
+    /*パーソナリティ　ノーマチブ ・意欲・価値観・FBはないので削除*/
+    /*エントリー*/
+    .entry th {
+    text-align:left;
+    }
+    
+    /*注意事項内強調*/
+    li strong {
+    color:#FF0000;
+    }
+    
+    /*行の色変え　上書きのため一番下に記述*/
+    tr.odd td {
+    background:#EEEEEE;
+    }
+    
+    /*注意事項内強調*/
+    table.env th.setting,table.env th.result,table.env td{text-align:center;}
+    table.env td.setting{text-align:left;}
+    

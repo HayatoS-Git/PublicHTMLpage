@@ -1,0 +1,2517 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<title>XXX株式会社 パーソナリティ</title>
+<link rel="stylesheet" href="common.css" type="text/css">
+<link rel="stylesheet" href="style.css" type="text/css">
+
+<style type="text/css">
+<!--
+body{background-color:#FFFFFF;color: #333333;}
+h2 {background-color:#D31453;color: #333333;}
+h3 {background-color:#004080;color: #333333;}
+table,td,th,table#login,table#login th,table#login td,table.personality,table.personality th,table.personality td,table#entryStatus{border:solid 1px #333333;}
+th,table#login th,table.personality th,table.idlist th,table.property th{background-color:#EBD8DC;color: #333333;}
+.personality .yes {background-color:#E1EFFD;}
+.personality .no {background-color:#FEE0EA;}
+a:link,a:visited,a:hover,a:active,.button a:link,.return a:link,.button a:visited,.return a:visited,.button a:hover,.return a:hover,.button a:active,.return a:active {color:#CC0000;}
+.notice,.important,.herenow{color:#CC0000;}
+container,p,li,dl{font-size:100%;}
+th,td{font-size:80%;}
+.timetable *,.limit,.notice,li{font-size: 97%;}
+body,th,td,p{line-height:140%;}
+tr.odd td {background:#EEEEEE;}
+div#navigation li{font-size: 12px;}
+.emphasis {color:#FF0000;}
+-->
+</style>
+
+<script type="text/javascript" src="data_function08.js"></script>
+<script type="text/javascript" src="data_control2.js"></script>
+<script type="text/javascript">
+<!--
+function inputCheck(){
+	with(document.FormMain){
+		for(xcnt=1;xcnt<=68;xcnt++){
+			if(eval('!radioCheck(opq'+xcnt+'y)'))return alertTo(xcnt+'問目が未回答です',eval('opq'+xcnt+'y[0]'));
+			if(eval('!radioCheck(opq'+xcnt+'n)'))return alertTo(xcnt+'問目が未回答です',eval('opq'+xcnt+'n[0]'));
+			if(eval('!sameCheck(opq'+xcnt+'y,opq'+xcnt+'n)'))return alertTo(xcnt+'問目でYESとNOに同じ項目が選択されています',eval('opq'+xcnt+'y[0]'));
+		}
+		if(getSelValue(select)=="0")return alertTo('上記の内容で送信するを選んでください',select);
+	}
+	return true;
+}
+// -->
+</script>
+</head>
+<body>
+<noscript>
+<div class="alert">
+	<h2>※注意</h2>
+	<p>
+		現在ご使用中のブラウザの設定は、JavaScriptかcookieがオフになっているか未対応です。<br>
+		当サイトはページの性質上JavaScriptとcookieを使用しております。
+	</p>
+</div>
+</noscript>
+
+<div id="container">
+<form method="post" action="https://nsvs1.e-exams4.jp/p4ee/wga/main/opq_sub.asp" name="FormMain" onsubmit="return inputCheck();">
+<h1><img src="3019114200logo.gif" width="800" height="50" alt=""></h1>
+<div id="information">
+	<p>
+		<a href="https://nsvs1.e-exams4.jp/p4ee/wga/help/faq.asp" target="_blank">正しく受検できない方はFAQをご覧ください</a><br>
+	</p>
+</div>
+<h2>パーソナリティ</h2>
+<p id="id">名前さん</p>
+<h3>回答の仕方</h3>
+<p>1つの質問項目は、4つのパーソナリティに関する記述から成り立っています。</p>
+<p>その中で、自分のパーソナリティは、最もこのタイプに近いと思う場合は、YES欄のＡ，Ｂ，Ｃ，Ｄのいずれか1つをチェックしてください。また、自分のパーソナリティは、最もこのタイプから遠いと思う場合は、NO欄のＡ，Ｂ，Ｃ，Ｄのいずれか1つをチェックしてください。</p>
+<p>従って各問題番号に対し、チェックするのは必ず2個になります。</p>
+<p>なお、記述のチェックを修正する場合は別の記述にチェックをしてください。</p>
+<h3>回答例</h3>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">例題</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opqey" value="1"></td>
+		<td class="no"><input type="radio" name="opqen" value="1"></td>
+		<td class="article">グループ行動をよくとる</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opqey" value="2" checked=""></td>
+		<td class="no"><input type="radio" name="opqen" value="2"></td>
+		<td class="article">常識を重んじる</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opqey" value="3"></td>
+		<td class="no"><input type="radio" name="opqen" value="3"></td>
+		<td class="article">アイデアを売り込むのが得意</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opqey" value="4"></td>
+		<td class="no"><input type="radio" name="opqen" value="4" checked=""></td>
+		<td class="article">わりと簡単にリラックスできる</td>
+	</tr>
+</tbody></table>
+
+<p>この4つの記述の中で、もし自分に最もあてはまるのがＢであり、最もあてはまらないのがＤであれば、例のようにチェックします。</p>
+<h3>注意事項</h3>
+<ul>
+	<li>問題数は全部で68問あります。</li>
+	<li>できる限り、自分のパーソナリティの特徴を見極めて正直に答えてください。自分の願望や、こう答えるべきだという判断を加えないでください。</li>
+	<li>質問項目により、あなたにとって判断しやすかったり、しにくかったりする場合が当然あると思います。特にこだわらないで、必ずどれかを選ぶようにしてください。</li>
+	<li>すべての質問について、やり残しのないように答えてください。</li>
+	<li>制限時間はありませんが、できる限り早く進行させ、1つの質問項目に考えこまないようにしてください（標準回答時間は20分です）。</li>
+</ul>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">1</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq1y" value="1"></td>
+		<td class="no"><input type="radio" name="opq1n" value="1"></td>
+		<td class="article">仕事は最後までやり抜く</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq1y" value="2"></td>
+		<td class="no"><input type="radio" name="opq1n" value="2"></td>
+		<td class="article">負けず嫌いである</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq1y" value="3"></td>
+		<td class="no"><input type="radio" name="opq1n" value="3"></td>
+		<td class="article">新しいことを思いつく</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq1y" value="4"></td>
+		<td class="no"><input type="radio" name="opq1n" value="4"></td>
+		<td class="article">気持ちの切りかえが早い</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">2</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq2y" value="1"></td>
+		<td class="no"><input type="radio" name="opq2n" value="1"></td>
+		<td class="article">創意工夫に富む</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq2y" value="2"></td>
+		<td class="no"><input type="radio" name="opq2n" value="2"></td>
+		<td class="article">うまくいかなくても落ち込まない</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq2y" value="3"></td>
+		<td class="no"><input type="radio" name="opq2n" value="3"></td>
+		<td class="article">素早く答が出せる</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq2y" value="4"></td>
+		<td class="no"><input type="radio" name="opq2n" value="4"></td>
+		<td class="article">前もって計画を立てる</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">3</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq3y" value="1"></td>
+		<td class="no"><input type="radio" name="opq3n" value="1"></td>
+		<td class="article">前もって準備する</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq3y" value="2"></td>
+		<td class="no"><input type="radio" name="opq3n" value="2"></td>
+		<td class="article">感情を抑えることができる</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq3y" value="3"></td>
+		<td class="no"><input type="radio" name="opq3n" value="3"></td>
+		<td class="article">理論的である</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq3y" value="4"></td>
+		<td class="no"><input type="radio" name="opq3n" value="4"></td>
+		<td class="article">人に指示を与えてうまく動かせる</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">4</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq4y" value="1"></td>
+		<td class="no"><input type="radio" name="opq4n" value="1"></td>
+		<td class="article">計数データを用いるのが得意である</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq4y" value="2"></td>
+		<td class="no"><input type="radio" name="opq4n" value="2"></td>
+		<td class="article">素早く決断する</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq4y" value="3"></td>
+		<td class="no"><input type="radio" name="opq4n" value="3"></td>
+		<td class="article">独創性がある</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq4y" value="4"></td>
+		<td class="no"><input type="radio" name="opq4n" value="4"></td>
+		<td class="article">相手の議論の弱点をすぐに見抜ける</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">5</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq5y" value="1"></td>
+		<td class="no"><input type="radio" name="opq5n" value="1"></td>
+		<td class="article">人のことを分析するほうだ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq5y" value="2"></td>
+		<td class="no"><input type="radio" name="opq5n" value="2"></td>
+		<td class="article">事前に計画を立てる</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq5y" value="3"></td>
+		<td class="no"><input type="radio" name="opq5n" value="3"></td>
+		<td class="article">変化を好む</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq5y" value="4"></td>
+		<td class="no"><input type="radio" name="opq5n" value="4"></td>
+		<td class="article">人前で自信をもって振る舞える</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">6</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq6y" value="1"></td>
+		<td class="no"><input type="radio" name="opq6n" value="1"></td>
+		<td class="article">リラックスできる</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq6y" value="2"></td>
+		<td class="no"><input type="radio" name="opq6n" value="2"></td>
+		<td class="article">自分の成功をひけらかさない</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq6y" value="3"></td>
+		<td class="no"><input type="radio" name="opq6n" value="3"></td>
+		<td class="article">統計などのデータを扱うのが好きだ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq6y" value="4"></td>
+		<td class="no"><input type="radio" name="opq6n" value="4"></td>
+		<td class="article">人を指図して仕事をまとめるのが得意だ</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">7</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq7y" value="1"></td>
+		<td class="no"><input type="radio" name="opq7n" value="1"></td>
+		<td class="article">人前での説明が苦にならない</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq7y" value="2"></td>
+		<td class="no"><input type="radio" name="opq7n" value="2"></td>
+		<td class="article">パソコンなどの機器を使うのが好きだ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq7y" value="3"></td>
+		<td class="no"><input type="radio" name="opq7n" value="3"></td>
+		<td class="article">物事を肯定的に見る</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq7y" value="4"></td>
+		<td class="no"><input type="radio" name="opq7n" value="4"></td>
+		<td class="article">物事がうまくいくかどうか心配する</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">8</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq8y" value="1"></td>
+		<td class="no"><input type="radio" name="opq8n" value="1"></td>
+		<td class="article">謙虚なほうだ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq8y" value="2"></td>
+		<td class="no"><input type="radio" name="opq8n" value="2"></td>
+		<td class="article">何でも話せる友人が多い</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq8y" value="3"></td>
+		<td class="no"><input type="radio" name="opq8n" value="3"></td>
+		<td class="article">仕事を中断させたままにしておかない</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq8y" value="4"></td>
+		<td class="no"><input type="radio" name="opq8n" value="4"></td>
+		<td class="article">怒りを抑えられる</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">9</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq9y" value="1"></td>
+		<td class="no"><input type="radio" name="opq9n" value="1"></td>
+		<td class="article">楽観的に考えて物事を進める</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq9y" value="2"></td>
+		<td class="no"><input type="radio" name="opq9n" value="2"></td>
+		<td class="article">常に先の見通しを立てる</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq9y" value="3"></td>
+		<td class="no"><input type="radio" name="opq9n" value="3"></td>
+		<td class="article">負けるのが嫌だ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq9y" value="4"></td>
+		<td class="no"><input type="radio" name="opq9n" value="4"></td>
+		<td class="article">具体的な作業を伴う仕事が得意だ</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">10</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq10y" value="1"></td>
+		<td class="no"><input type="radio" name="opq10n" value="1"></td>
+		<td class="article">エネルギッシュなほうだ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq10y" value="2"></td>
+		<td class="no"><input type="radio" name="opq10n" value="2"></td>
+		<td class="article">楽観的である</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq10y" value="3"></td>
+		<td class="no"><input type="radio" name="opq10n" value="3"></td>
+		<td class="article">正確さが要求される仕事が好きだ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq10y" value="4"></td>
+		<td class="no"><input type="radio" name="opq10n" value="4"></td>
+		<td class="article">手先を使う仕事が好きだ</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">11</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq11y" value="1"></td>
+		<td class="no"><input type="radio" name="opq11n" value="1"></td>
+		<td class="article">いつでもリラックスできる</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq11y" value="2"></td>
+		<td class="no"><input type="radio" name="opq11n" value="2"></td>
+		<td class="article">パソコンなどの機器を使うのが苦にならない</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq11y" value="3"></td>
+		<td class="no"><input type="radio" name="opq11n" value="3"></td>
+		<td class="article">計画や段取りを十分にする</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq11y" value="4"></td>
+		<td class="no"><input type="radio" name="opq11n" value="4"></td>
+		<td class="article">パーティなどではよく話すほうだ</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">12</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq12y" value="1"></td>
+		<td class="no"><input type="radio" name="opq12n" value="1"></td>
+		<td class="article">勝負するからには負けたくない</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq12y" value="2"></td>
+		<td class="no"><input type="radio" name="opq12n" value="2"></td>
+		<td class="article">外向的である</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq12y" value="3"></td>
+		<td class="no"><input type="radio" name="opq12n" value="3"></td>
+		<td class="article">中傷されても毅然（きぜん）とした態度をとる</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq12y" value="4"></td>
+		<td class="no"><input type="radio" name="opq12n" value="4"></td>
+		<td class="article">表を作ったりするのが好きだ</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">13</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq13y" value="1"></td>
+		<td class="no"><input type="radio" name="opq13n" value="1"></td>
+		<td class="article">未知の場所を訪ねるのが好きだ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq13y" value="2"></td>
+		<td class="no"><input type="radio" name="opq13n" value="2"></td>
+		<td class="article">人の言動を分析する</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq13y" value="3"></td>
+		<td class="no"><input type="radio" name="opq13n" value="3"></td>
+		<td class="article">チームをまとめるのがうまい</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq13y" value="4"></td>
+		<td class="no"><input type="radio" name="opq13n" value="4"></td>
+		<td class="article">なるべくみんなと話し合う</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">14</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq14y" value="1"></td>
+		<td class="no"><input type="radio" name="opq14n" value="1"></td>
+		<td class="article">細かいところも注意を怠らない</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq14y" value="2"></td>
+		<td class="no"><input type="radio" name="opq14n" value="2"></td>
+		<td class="article">率直でユーモアがある</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq14y" value="3"></td>
+		<td class="no"><input type="radio" name="opq14n" value="3"></td>
+		<td class="article">壊れたものを直すのが苦にならない</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq14y" value="4"></td>
+		<td class="no"><input type="radio" name="opq14n" value="4"></td>
+		<td class="article">困難な目標も達成できる</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">15</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq15y" value="1"></td>
+		<td class="no"><input type="radio" name="opq15n" value="1"></td>
+		<td class="article">個人的な相談にも親身になる</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq15y" value="2"></td>
+		<td class="no"><input type="radio" name="opq15n" value="2"></td>
+		<td class="article">複雑な問題を処理できる</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq15y" value="3"></td>
+		<td class="no"><input type="radio" name="opq15n" value="3"></td>
+		<td class="article">余暇は活動的に過ごす</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq15y" value="4"></td>
+		<td class="no"><input type="radio" name="opq15n" value="4"></td>
+		<td class="article">友人と一緒に何かやることが多い</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">16</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq16y" value="1"></td>
+		<td class="no"><input type="radio" name="opq16n" value="1"></td>
+		<td class="article">計画を立てるのが好きだ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq16y" value="2"></td>
+		<td class="no"><input type="radio" name="opq16n" value="2"></td>
+		<td class="article">仕事がうまくいっているかどうか気になる</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq16y" value="3"></td>
+		<td class="no"><input type="radio" name="opq16n" value="3"></td>
+		<td class="article">勝気なほうだ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq16y" value="4"></td>
+		<td class="no"><input type="radio" name="opq16n" value="4"></td>
+		<td class="article">他人の行動の動機を分析する</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">17</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq17y" value="1"></td>
+		<td class="no"><input type="radio" name="opq17n" value="1"></td>
+		<td class="article">予定通りいかないと気になる</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq17y" value="2"></td>
+		<td class="no"><input type="radio" name="opq17n" value="2"></td>
+		<td class="article">みんなと相談して決める</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq17y" value="3"></td>
+		<td class="no"><input type="radio" name="opq17n" value="3"></td>
+		<td class="article">新しいことをやってみるのが好きだ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq17y" value="4"></td>
+		<td class="no"><input type="radio" name="opq17n" value="4"></td>
+		<td class="article">人と親密なつきあいができる</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">18</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq18y" value="1"></td>
+		<td class="no"><input type="radio" name="opq18n" value="1"></td>
+		<td class="article">経験がないことでもやってみる</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq18y" value="2"></td>
+		<td class="no"><input type="radio" name="opq18n" value="2"></td>
+		<td class="article">感情を表に出さない</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq18y" value="3"></td>
+		<td class="no"><input type="radio" name="opq18n" value="3"></td>
+		<td class="article">交渉ごとが苦にならない</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq18y" value="4"></td>
+		<td class="no"><input type="radio" name="opq18n" value="4"></td>
+		<td class="article">自分のことを自慢しない</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">19</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq19y" value="1"></td>
+		<td class="no"><input type="radio" name="opq19n" value="1"></td>
+		<td class="article">素早く判断できる</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq19y" value="2"></td>
+		<td class="no"><input type="radio" name="opq19n" value="2"></td>
+		<td class="article">手先を使う仕事が得意だ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq19y" value="3"></td>
+		<td class="no"><input type="radio" name="opq19n" value="3"></td>
+		<td class="article">名案がひらめくほうだ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq19y" value="4"></td>
+		<td class="no"><input type="radio" name="opq19n" value="4"></td>
+		<td class="article">挨拶やスピーチに自信がある</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">20</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq20y" value="1"></td>
+		<td class="no"><input type="radio" name="opq20n" value="1"></td>
+		<td class="article">新しいことを考えつく</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq20y" value="2"></td>
+		<td class="no"><input type="radio" name="opq20n" value="2"></td>
+		<td class="article">人の意見に耳を傾ける</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq20y" value="3"></td>
+		<td class="no"><input type="radio" name="opq20n" value="3"></td>
+		<td class="article">データを集めたり分析したりするのが好きだ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq20y" value="4"></td>
+		<td class="no"><input type="radio" name="opq20n" value="4"></td>
+		<td class="article">グループの先頭に立つ</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">21</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq21y" value="1"></td>
+		<td class="no"><input type="radio" name="opq21n" value="1"></td>
+		<td class="article">計画を立ててから始める</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq21y" value="2"></td>
+		<td class="no"><input type="radio" name="opq21n" value="2"></td>
+		<td class="article">うまくいくかどうかが気になる</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq21y" value="3"></td>
+		<td class="no"><input type="radio" name="opq21n" value="3"></td>
+		<td class="article">組織のまとめ役であることが多い</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq21y" value="4"></td>
+		<td class="no"><input type="radio" name="opq21n" value="4"></td>
+		<td class="article">じっとしているのは嫌いだ</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">22</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq22y" value="1"></td>
+		<td class="no"><input type="radio" name="opq22n" value="1"></td>
+		<td class="article">分析的思考を好む</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq22y" value="2"></td>
+		<td class="no"><input type="radio" name="opq22n" value="2"></td>
+		<td class="article">友人と一緒にいるのが好きだ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq22y" value="3"></td>
+		<td class="no"><input type="radio" name="opq22n" value="3"></td>
+		<td class="article">話の矛盾に気づくほうだ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq22y" value="4"></td>
+		<td class="no"><input type="radio" name="opq22n" value="4"></td>
+		<td class="article">体を鍛えるのが好きだ</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">23</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq23y" value="1"></td>
+		<td class="no"><input type="radio" name="opq23n" value="1"></td>
+		<td class="article">緻密さを必要とする仕事が好きだ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq23y" value="2"></td>
+		<td class="no"><input type="radio" name="opq23n" value="2"></td>
+		<td class="article">誰とでも気軽にしゃべる</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq23y" value="3"></td>
+		<td class="no"><input type="radio" name="opq23n" value="3"></td>
+		<td class="article">自分のやり方にこだわるほうだ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq23y" value="4"></td>
+		<td class="no"><input type="radio" name="opq23n" value="4"></td>
+		<td class="article">他人のことを気づかう</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">24</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq24y" value="1"></td>
+		<td class="no"><input type="radio" name="opq24n" value="1"></td>
+		<td class="article">精神的にまいることがほとんどない</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq24y" value="2"></td>
+		<td class="no"><input type="radio" name="opq24n" value="2"></td>
+		<td class="article">面白い話をしてまわりの人を楽しませる</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq24y" value="3"></td>
+		<td class="no"><input type="radio" name="opq24n" value="3"></td>
+		<td class="article">物事を自分のやり方でやる</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq24y" value="4"></td>
+		<td class="no"><input type="radio" name="opq24n" value="4"></td>
+		<td class="article">好奇心が強い</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">25</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq25y" value="1"></td>
+		<td class="no"><input type="radio" name="opq25n" value="1"></td>
+		<td class="article">論理的に考える</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq25y" value="2"></td>
+		<td class="no"><input type="radio" name="opq25n" value="2"></td>
+		<td class="article">交際範囲が広い</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq25y" value="3"></td>
+		<td class="no"><input type="radio" name="opq25n" value="3"></td>
+		<td class="article">楽観的なものの見方をする</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq25y" value="4"></td>
+		<td class="no"><input type="radio" name="opq25n" value="4"></td>
+		<td class="article">負けず嫌いだ</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">26</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq26y" value="1"></td>
+		<td class="no"><input type="radio" name="opq26n" value="1"></td>
+		<td class="article">優れた案をどんどん出せる</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq26y" value="2"></td>
+		<td class="no"><input type="radio" name="opq26n" value="2"></td>
+		<td class="article">自慢しない</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq26y" value="3"></td>
+		<td class="no"><input type="radio" name="opq26n" value="3"></td>
+		<td class="article">数字やデータを用いて考える</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq26y" value="4"></td>
+		<td class="no"><input type="radio" name="opq26n" value="4"></td>
+		<td class="article">実績のある確実な方法をとる</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">27</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq27y" value="1"></td>
+		<td class="no"><input type="radio" name="opq27n" value="1"></td>
+		<td class="article">あまり緊張することはない</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq27y" value="2"></td>
+		<td class="no"><input type="radio" name="opq27n" value="2"></td>
+		<td class="article">他人の行動の動機がわかる</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq27y" value="3"></td>
+		<td class="no"><input type="radio" name="opq27n" value="3"></td>
+		<td class="article">人の世話をするのが好きだ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq27y" value="4"></td>
+		<td class="no"><input type="radio" name="opq27n" value="4"></td>
+		<td class="article">状況判断が早い</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">28</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq28y" value="1"></td>
+		<td class="no"><input type="radio" name="opq28n" value="1"></td>
+		<td class="article">成果を自慢しない</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq28y" value="2"></td>
+		<td class="no"><input type="radio" name="opq28n" value="2"></td>
+		<td class="article">まわりが反対しても自分の考えで行動する</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq28y" value="3"></td>
+		<td class="no"><input type="radio" name="opq28n" value="3"></td>
+		<td class="article">美的センスに自信がある</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq28y" value="4"></td>
+		<td class="no"><input type="radio" name="opq28n" value="4"></td>
+		<td class="article">他の人には負けたくない</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">29</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq29y" value="1"></td>
+		<td class="no"><input type="radio" name="opq29n" value="1"></td>
+		<td class="article">前もってよく考える</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq29y" value="2"></td>
+		<td class="no"><input type="radio" name="opq29n" value="2"></td>
+		<td class="article">物事がうまくいかなくても気落ちしない</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq29y" value="3"></td>
+		<td class="no"><input type="radio" name="opq29n" value="3"></td>
+		<td class="article">古い価値観を大事にする</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq29y" value="4"></td>
+		<td class="no"><input type="radio" name="opq29n" value="4"></td>
+		<td class="article">上昇志向が強い</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">30</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq30y" value="1"></td>
+		<td class="no"><input type="radio" name="opq30n" value="1"></td>
+		<td class="article">ヴァイタリティがあるほうだ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq30y" value="2"></td>
+		<td class="no"><input type="radio" name="opq30n" value="2"></td>
+		<td class="article">パソコンなどのキー操作が得意だ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq30y" value="3"></td>
+		<td class="no"><input type="radio" name="opq30n" value="3"></td>
+		<td class="article">人のリアクションがよめる</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq30y" value="4"></td>
+		<td class="no"><input type="radio" name="opq30n" value="4"></td>
+		<td class="article">個人で決めるより話し合いで決めるほうがいい</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">31</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq31y" value="1"></td>
+		<td class="no"><input type="radio" name="opq31n" value="1"></td>
+		<td class="article">手作業が得意だ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq31y" value="2"></td>
+		<td class="no"><input type="radio" name="opq31n" value="2"></td>
+		<td class="article">相談ごとには進んでのる</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq31y" value="3"></td>
+		<td class="no"><input type="radio" name="opq31n" value="3"></td>
+		<td class="article">締切日を守る</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq31y" value="4"></td>
+		<td class="no"><input type="radio" name="opq31n" value="4"></td>
+		<td class="article">独自のアイデアを産み出せる</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">32</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq32y" value="1"></td>
+		<td class="no"><input type="radio" name="opq32n" value="1"></td>
+		<td class="article">人前での発表が苦にならない</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq32y" value="2"></td>
+		<td class="no"><input type="radio" name="opq32n" value="2"></td>
+		<td class="article">人の行動を分析する</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq32y" value="3"></td>
+		<td class="no"><input type="radio" name="opq32n" value="3"></td>
+		<td class="article">緻密さを必要とする仕事が得意だ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq32y" value="4"></td>
+		<td class="no"><input type="radio" name="opq32n" value="4"></td>
+		<td class="article">控え目なほうだ</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">33</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq33y" value="1"></td>
+		<td class="no"><input type="radio" name="opq33n" value="1"></td>
+		<td class="article">やったことがないことをやるのが好きだ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq33y" value="2"></td>
+		<td class="no"><input type="radio" name="opq33n" value="2"></td>
+		<td class="article">私事でも人に力を貸す</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq33y" value="3"></td>
+		<td class="no"><input type="radio" name="opq33n" value="3"></td>
+		<td class="article">相手の議論の弱点に気がつく</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq33y" value="4"></td>
+		<td class="no"><input type="radio" name="opq33n" value="4"></td>
+		<td class="article">まわりに反対されても自分の考えを貫く</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">34</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq34y" value="1"></td>
+		<td class="no"><input type="radio" name="opq34n" value="1"></td>
+		<td class="article">分析的な仕事を好む</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq34y" value="2"></td>
+		<td class="no"><input type="radio" name="opq34n" value="2"></td>
+		<td class="article">データを使う仕事が好きだ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq34y" value="3"></td>
+		<td class="no"><input type="radio" name="opq34n" value="3"></td>
+		<td class="article">うまくリラックスできる</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq34y" value="4"></td>
+		<td class="no"><input type="radio" name="opq34n" value="4"></td>
+		<td class="article">あまりひけらかすほうではない</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">35</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq35y" value="1"></td>
+		<td class="no"><input type="radio" name="opq35n" value="1"></td>
+		<td class="article">気持ちに余裕がもてるほうだ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq35y" value="2"></td>
+		<td class="no"><input type="radio" name="opq35n" value="2"></td>
+		<td class="article">戦わずに降参するのは嫌だ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq35y" value="3"></td>
+		<td class="no"><input type="radio" name="opq35n" value="3"></td>
+		<td class="article">話の中心になっているのが楽しい</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq35y" value="4"></td>
+		<td class="no"><input type="radio" name="opq35n" value="4"></td>
+		<td class="article">緻密な仕事を好む</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">36</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq36y" value="1"></td>
+		<td class="no"><input type="radio" name="opq36n" value="1"></td>
+		<td class="article">計画の矛盾にすぐ気がつく</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq36y" value="2"></td>
+		<td class="no"><input type="radio" name="opq36n" value="2"></td>
+		<td class="article">細かい確認作業を怠らない</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq36y" value="3"></td>
+		<td class="no"><input type="radio" name="opq36n" value="3"></td>
+		<td class="article">問題があれば話し合いたい</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq36y" value="4"></td>
+		<td class="no"><input type="radio" name="opq36n" value="4"></td>
+		<td class="article">企画の売り込みに自信がある</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">37</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq37y" value="1"></td>
+		<td class="no"><input type="radio" name="opq37n" value="1"></td>
+		<td class="article">高い目標をめざす</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq37y" value="2"></td>
+		<td class="no"><input type="radio" name="opq37n" value="2"></td>
+		<td class="article">人の行動をよく観察する</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq37y" value="3"></td>
+		<td class="no"><input type="radio" name="opq37n" value="3"></td>
+		<td class="article">気持ちの切り替えができる</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq37y" value="4"></td>
+		<td class="no"><input type="radio" name="opq37n" value="4"></td>
+		<td class="article">成果を自慢しない</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">38</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq38y" value="1"></td>
+		<td class="no"><input type="radio" name="opq38n" value="1"></td>
+		<td class="article">公式な場で挨拶をするのはわりと好きだ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq38y" value="2"></td>
+		<td class="no"><input type="radio" name="opq38n" value="2"></td>
+		<td class="article">何かをやるときには先に計画を立てる</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq38y" value="3"></td>
+		<td class="no"><input type="radio" name="opq38n" value="3"></td>
+		<td class="article">うまくリラックスできる</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq38y" value="4"></td>
+		<td class="no"><input type="radio" name="opq38n" value="4"></td>
+		<td class="article">正統的なやり方を好む</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">39</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq39y" value="1"></td>
+		<td class="no"><input type="radio" name="opq39n" value="1"></td>
+		<td class="article">議論の矛盾点をすぐ見抜く</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq39y" value="2"></td>
+		<td class="no"><input type="radio" name="opq39n" value="2"></td>
+		<td class="article">人に比べて斬新な考えをする</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq39y" value="3"></td>
+		<td class="no"><input type="radio" name="opq39n" value="3"></td>
+		<td class="article">物事を正確にやることが好きだ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq39y" value="4"></td>
+		<td class="no"><input type="radio" name="opq39n" value="4"></td>
+		<td class="article">人の行動などを分析する</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">40</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq40y" value="1"></td>
+		<td class="no"><input type="radio" name="opq40n" value="1"></td>
+		<td class="article">人にどう思われているかはあまり気にしない</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq40y" value="2"></td>
+		<td class="no"><input type="radio" name="opq40n" value="2"></td>
+		<td class="article">具体的な作業が好きだ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq40y" value="3"></td>
+		<td class="no"><input type="radio" name="opq40n" value="3"></td>
+		<td class="article">決断が早い</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq40y" value="4"></td>
+		<td class="no"><input type="radio" name="opq40n" value="4"></td>
+		<td class="article">やり慣れた方法でやる</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">41</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq41y" value="1"></td>
+		<td class="no"><input type="radio" name="opq41n" value="1"></td>
+		<td class="article">新しいプランをうまく売り込める</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq41y" value="2"></td>
+		<td class="no"><input type="radio" name="opq41n" value="2"></td>
+		<td class="article">気配りができる</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq41y" value="3"></td>
+		<td class="no"><input type="radio" name="opq41n" value="3"></td>
+		<td class="article">精神的にタフである</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq41y" value="4"></td>
+		<td class="no"><input type="radio" name="opq41n" value="4"></td>
+		<td class="article">いろいろな場所へでかけていくのが好きだ</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">42</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq42y" value="1"></td>
+		<td class="no"><input type="radio" name="opq42n" value="1"></td>
+		<td class="article">物事は良いほうへ変わっていくと思う</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq42y" value="2"></td>
+		<td class="no"><input type="radio" name="opq42n" value="2"></td>
+		<td class="article">話し好きだ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq42y" value="3"></td>
+		<td class="no"><input type="radio" name="opq42n" value="3"></td>
+		<td class="article">画家や音楽家を尊敬する</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq42y" value="4"></td>
+		<td class="no"><input type="radio" name="opq42n" value="4"></td>
+		<td class="article">悩みごとがあるとくつろげない</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">43</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq43y" value="1"></td>
+		<td class="no"><input type="radio" name="opq43n" value="1"></td>
+		<td class="article">人と競争するのが面白い</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq43y" value="2"></td>
+		<td class="no"><input type="radio" name="opq43n" value="2"></td>
+		<td class="article">既に確立されている方法に従う</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq43y" value="3"></td>
+		<td class="no"><input type="radio" name="opq43n" value="3"></td>
+		<td class="article">ものを売るのが得意だ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq43y" value="4"></td>
+		<td class="no"><input type="radio" name="opq43n" value="4"></td>
+		<td class="article">感情をあまり表に出さない</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">44</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq44y" value="1"></td>
+		<td class="no"><input type="radio" name="opq44n" value="1"></td>
+		<td class="article">人が自分をどう思うか気にならない</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq44y" value="2"></td>
+		<td class="no"><input type="radio" name="opq44n" value="2"></td>
+		<td class="article">人の世話をするのが好きだ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq44y" value="3"></td>
+		<td class="no"><input type="radio" name="opq44n" value="3"></td>
+		<td class="article">勤勉さを必要とする仕事が得意だ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq44y" value="4"></td>
+		<td class="no"><input type="radio" name="opq44n" value="4"></td>
+		<td class="article">友達と一緒に何かをやるのが楽しい</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">45</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq45y" value="1"></td>
+		<td class="no"><input type="radio" name="opq45n" value="1"></td>
+		<td class="article">自分の行動を分析する</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq45y" value="2"></td>
+		<td class="no"><input type="radio" name="opq45n" value="2"></td>
+		<td class="article">人の意見を求める</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq45y" value="3"></td>
+		<td class="no"><input type="radio" name="opq45n" value="3"></td>
+		<td class="article">体を鍛えるのが好きだ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq45y" value="4"></td>
+		<td class="no"><input type="radio" name="opq45n" value="4"></td>
+		<td class="article">細かいことにもきちんと注意を払う</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">46</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq46y" value="1"></td>
+		<td class="no"><input type="radio" name="opq46n" value="1"></td>
+		<td class="article">目標に向けて頑張る</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq46y" value="2"></td>
+		<td class="no"><input type="radio" name="opq46n" value="2"></td>
+		<td class="article">何に対しても自分の判断基準をもつ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq46y" value="3"></td>
+		<td class="no"><input type="radio" name="opq46n" value="3"></td>
+		<td class="article">クラシック音楽が好きだ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq46y" value="4"></td>
+		<td class="no"><input type="radio" name="opq46n" value="4"></td>
+		<td class="article">楽観的に物事を見る</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">47</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq47y" value="1"></td>
+		<td class="no"><input type="radio" name="opq47n" value="1"></td>
+		<td class="article">人には負けたくない</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq47y" value="2"></td>
+		<td class="no"><input type="radio" name="opq47n" value="2"></td>
+		<td class="article">気楽にスピーチができる</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq47y" value="3"></td>
+		<td class="no"><input type="radio" name="opq47n" value="3"></td>
+		<td class="article">仕事を途中で投げ出さない</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq47y" value="4"></td>
+		<td class="no"><input type="radio" name="opq47n" value="4"></td>
+		<td class="article">人の批判を気にしない</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">48</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq48y" value="1"></td>
+		<td class="no"><input type="radio" name="opq48n" value="1"></td>
+		<td class="article">腹を立てても顔に出さない</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq48y" value="2"></td>
+		<td class="no"><input type="radio" name="opq48n" value="2"></td>
+		<td class="article">問題を計数的に把握する</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq48y" value="3"></td>
+		<td class="no"><input type="radio" name="opq48n" value="3"></td>
+		<td class="article">たくさんの人の前で話すことが苦にならない</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq48y" value="4"></td>
+		<td class="no"><input type="radio" name="opq48n" value="4"></td>
+		<td class="article">ことがうまく進んでいるかどうか気になる</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">49</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq49y" value="1"></td>
+		<td class="no"><input type="radio" name="opq49n" value="1"></td>
+		<td class="article">まわりの人への助言を惜しまない</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq49y" value="2"></td>
+		<td class="no"><input type="radio" name="opq49n" value="2"></td>
+		<td class="article">変化を好む</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq49y" value="3"></td>
+		<td class="no"><input type="radio" name="opq49n" value="3"></td>
+		<td class="article">状況判断が早い</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq49y" value="4"></td>
+		<td class="no"><input type="radio" name="opq49n" value="4"></td>
+		<td class="article">いつも自分の意見をもっている</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">50</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq50y" value="1"></td>
+		<td class="no"><input type="radio" name="opq50n" value="1"></td>
+		<td class="article">活動的なことが好きだ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq50y" value="2"></td>
+		<td class="no"><input type="radio" name="opq50n" value="2"></td>
+		<td class="article">まわりの意見に左右されず行動する</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq50y" value="3"></td>
+		<td class="no"><input type="radio" name="opq50n" value="3"></td>
+		<td class="article">新しいことをやるのが好きだ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq50y" value="4"></td>
+		<td class="no"><input type="radio" name="opq50n" value="4"></td>
+		<td class="article">他の人に苛立ちを見せない</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">51</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq51y" value="1"></td>
+		<td class="no"><input type="radio" name="opq51n" value="1"></td>
+		<td class="article">仲間といるのが好きだ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq51y" value="2"></td>
+		<td class="no"><input type="radio" name="opq51n" value="2"></td>
+		<td class="article">既に確立された方法をとる</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq51y" value="3"></td>
+		<td class="no"><input type="radio" name="opq51n" value="3"></td>
+		<td class="article">議論の矛盾点がわかる</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq51y" value="4"></td>
+		<td class="no"><input type="radio" name="opq51n" value="4"></td>
+		<td class="article">説得力に自信がある</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">52</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq52y" value="1"></td>
+		<td class="no"><input type="radio" name="opq52n" value="1"></td>
+		<td class="article">タフな神経をもっている</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq52y" value="2"></td>
+		<td class="no"><input type="radio" name="opq52n" value="2"></td>
+		<td class="article">締切日は守る</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq52y" value="3"></td>
+		<td class="no"><input type="radio" name="opq52n" value="3"></td>
+		<td class="article">みんなの意見をまとめられる</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq52y" value="4"></td>
+		<td class="no"><input type="radio" name="opq52n" value="4"></td>
+		<td class="article">仲間と相談して方針を立てる</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">53</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq53y" value="1"></td>
+		<td class="no"><input type="radio" name="opq53n" value="1"></td>
+		<td class="article">仲間といるのが楽しい</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq53y" value="2"></td>
+		<td class="no"><input type="radio" name="opq53n" value="2"></td>
+		<td class="article">絵や音楽に関心がある</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq53y" value="3"></td>
+		<td class="no"><input type="radio" name="opq53n" value="3"></td>
+		<td class="article">感情を抑えられる</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq53y" value="4"></td>
+		<td class="no"><input type="radio" name="opq53n" value="4"></td>
+		<td class="article">休日には活動的に過ごす</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">54</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq54y" value="1"></td>
+		<td class="no"><input type="radio" name="opq54n" value="1"></td>
+		<td class="article">滅多に悲観的にならない</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq54y" value="2"></td>
+		<td class="no"><input type="radio" name="opq54n" value="2"></td>
+		<td class="article">最後まで仕事をやり抜く</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq54y" value="3"></td>
+		<td class="no"><input type="radio" name="opq54n" value="3"></td>
+		<td class="article">チームの指揮をとることが多い</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq54y" value="4"></td>
+		<td class="no"><input type="radio" name="opq54n" value="4"></td>
+		<td class="article">絵や音楽への関心が強い</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">55</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq55y" value="1"></td>
+		<td class="no"><input type="radio" name="opq55n" value="1"></td>
+		<td class="article">感情を表に出さない</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq55y" value="2"></td>
+		<td class="no"><input type="radio" name="opq55n" value="2"></td>
+		<td class="article">自分で立てた目標は達成する</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq55y" value="3"></td>
+		<td class="no"><input type="radio" name="opq55n" value="3"></td>
+		<td class="article">仕事をやりかけで残さない</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq55y" value="4"></td>
+		<td class="no"><input type="radio" name="opq55n" value="4"></td>
+		<td class="article">新しいアイデアを売り込むのがうまい</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">56</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq56y" value="1"></td>
+		<td class="no"><input type="radio" name="opq56n" value="1"></td>
+		<td class="article">高い目標をもつ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq56y" value="2"></td>
+		<td class="no"><input type="radio" name="opq56n" value="2"></td>
+		<td class="article">締切日がいつも頭にある</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq56y" value="3"></td>
+		<td class="no"><input type="radio" name="opq56n" value="3"></td>
+		<td class="article">人に指示を与えてうまく動かせる</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq56y" value="4"></td>
+		<td class="no"><input type="radio" name="opq56n" value="4"></td>
+		<td class="article">まわりに反対されても自分の意見を主張する</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">57</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq57y" value="1"></td>
+		<td class="no"><input type="radio" name="opq57n" value="1"></td>
+		<td class="article">物事をきちんとやることが好きだ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq57y" value="2"></td>
+		<td class="no"><input type="radio" name="opq57n" value="2"></td>
+		<td class="article">交渉ごとが得意だ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq57y" value="3"></td>
+		<td class="no"><input type="radio" name="opq57n" value="3"></td>
+		<td class="article">相手の議論の弱点に気がつく</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq57y" value="4"></td>
+		<td class="no"><input type="radio" name="opq57n" value="4"></td>
+		<td class="article">やるからには勝ちたい</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">58</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq58y" value="1"></td>
+		<td class="no"><input type="radio" name="opq58n" value="1"></td>
+		<td class="article">何を言われようと動じない</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq58y" value="2"></td>
+		<td class="no"><input type="radio" name="opq58n" value="2"></td>
+		<td class="article">絵をよく見にいく</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq58y" value="3"></td>
+		<td class="no"><input type="radio" name="opq58n" value="3"></td>
+		<td class="article">人の先頭に立つ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq58y" value="4"></td>
+		<td class="no"><input type="radio" name="opq58n" value="4"></td>
+		<td class="article">仕事がうまくいくかどうか心配する</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">59</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq59y" value="1"></td>
+		<td class="no"><input type="radio" name="opq59n" value="1"></td>
+		<td class="article">冗談を言ってまわりを楽しませる</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq59y" value="2"></td>
+		<td class="no"><input type="radio" name="opq59n" value="2"></td>
+		<td class="article">抽象的な思考ができる</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq59y" value="3"></td>
+		<td class="no"><input type="radio" name="opq59n" value="3"></td>
+		<td class="article">困難な目標でも達成しようと努力する</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq59y" value="4"></td>
+		<td class="no"><input type="radio" name="opq59n" value="4"></td>
+		<td class="article">仲間と話し合ってものを決める</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">60</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq60y" value="1"></td>
+		<td class="no"><input type="radio" name="opq60n" value="1"></td>
+		<td class="article">激昂（げっこう）しない</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq60y" value="2"></td>
+		<td class="no"><input type="radio" name="opq60n" value="2"></td>
+		<td class="article">決断が早い</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq60y" value="3"></td>
+		<td class="no"><input type="radio" name="opq60n" value="3"></td>
+		<td class="article">几帳面なほうだ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq60y" value="4"></td>
+		<td class="no"><input type="radio" name="opq60n" value="4"></td>
+		<td class="article">人の意見をよく聞く</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">61</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq61y" value="1"></td>
+		<td class="no"><input type="radio" name="opq61n" value="1"></td>
+		<td class="article">議論の矛盾が見つけられる</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq61y" value="2"></td>
+		<td class="no"><input type="radio" name="opq61n" value="2"></td>
+		<td class="article">目標に向けて自分のできる努力は惜しまない</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq61y" value="3"></td>
+		<td class="no"><input type="radio" name="opq61n" value="3"></td>
+		<td class="article">どちらかと言えば保守的なほうだ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq61y" value="4"></td>
+		<td class="no"><input type="radio" name="opq61n" value="4"></td>
+		<td class="article">人を説得するのがうまい</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">62</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq62y" value="1"></td>
+		<td class="no"><input type="radio" name="opq62n" value="1"></td>
+		<td class="article">人の批判に動じない</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq62y" value="2"></td>
+		<td class="no"><input type="radio" name="opq62n" value="2"></td>
+		<td class="article">相手の話の矛盾に気がつく</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq62y" value="3"></td>
+		<td class="no"><input type="radio" name="opq62n" value="3"></td>
+		<td class="article">人前で堂々とスピーチできる</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq62y" value="4"></td>
+		<td class="no"><input type="radio" name="opq62n" value="4"></td>
+		<td class="article">数学的なセンスがある</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">63</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq63y" value="1"></td>
+		<td class="no"><input type="radio" name="opq63n" value="1"></td>
+		<td class="article">意思決定をするのが早い</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq63y" value="2"></td>
+		<td class="no"><input type="radio" name="opq63n" value="2"></td>
+		<td class="article">見直し作業を怠らない</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq63y" value="3"></td>
+		<td class="no"><input type="radio" name="opq63n" value="3"></td>
+		<td class="article">社交的である</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq63y" value="4"></td>
+		<td class="no"><input type="radio" name="opq63n" value="4"></td>
+		<td class="article">安定志向である</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">64</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq64y" value="1"></td>
+		<td class="no"><input type="radio" name="opq64n" value="1"></td>
+		<td class="article">余暇は活動的に過ごす</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq64y" value="2"></td>
+		<td class="no"><input type="radio" name="opq64n" value="2"></td>
+		<td class="article">説得力があるほうだ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq64y" value="3"></td>
+		<td class="no"><input type="radio" name="opq64n" value="3"></td>
+		<td class="article">絵や音楽に理解がある</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq64y" value="4"></td>
+		<td class="no"><input type="radio" name="opq64n" value="4"></td>
+		<td class="article">仕事の成りゆきが気にかかる</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">65</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq65y" value="1"></td>
+		<td class="no"><input type="radio" name="opq65n" value="1"></td>
+		<td class="article">論理的にものを考える</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq65y" value="2"></td>
+		<td class="no"><input type="radio" name="opq65n" value="2"></td>
+		<td class="article">問題が起きても楽観的なほうだ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq65y" value="3"></td>
+		<td class="no"><input type="radio" name="opq65n" value="3"></td>
+		<td class="article">みんなで協議してものを決める</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq65y" value="4"></td>
+		<td class="no"><input type="radio" name="opq65n" value="4"></td>
+		<td class="article">絵や音楽に関心がある</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">66</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq66y" value="1"></td>
+		<td class="no"><input type="radio" name="opq66n" value="1"></td>
+		<td class="article">目標を掲げて努力する</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq66y" value="2"></td>
+		<td class="no"><input type="radio" name="opq66n" value="2"></td>
+		<td class="article">人の気持ちを気づかえる</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq66y" value="3"></td>
+		<td class="no"><input type="radio" name="opq66n" value="3"></td>
+		<td class="article">愉快な話で周囲を楽しませる</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq66y" value="4"></td>
+		<td class="no"><input type="radio" name="opq66n" value="4"></td>
+		<td class="article">データを扱う仕事が好き</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">67</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq67y" value="1"></td>
+		<td class="no"><input type="radio" name="opq67n" value="1"></td>
+		<td class="article">具体的なものに関心をもつ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq67y" value="2"></td>
+		<td class="no"><input type="radio" name="opq67n" value="2"></td>
+		<td class="article">決断を先に延ばさない</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq67y" value="3"></td>
+		<td class="no"><input type="radio" name="opq67n" value="3"></td>
+		<td class="article">抽象的な論理や思考を好む</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq67y" value="4"></td>
+		<td class="no"><input type="radio" name="opq67n" value="4"></td>
+		<td class="article">後輩の面倒見がいい</td>
+	</tr>
+</tbody></table>
+
+<table class="personality">
+	<tbody><tr>
+		<th class="qnum">問題番号</th>
+		<th class="alfabet">&nbsp;</th>
+		<th class="yes">YES</th>
+		<th class="no">NO</th>
+		<th class="article">▼・・【質問項目】</th>
+	</tr>
+	<tr>
+		<th rowspan="4" class="num">68</th>
+		<td class="alfabet">Ａ</td>
+		<td class="yes"><input type="radio" name="opq68y" value="1"></td>
+		<td class="no"><input type="radio" name="opq68n" value="1"></td>
+		<td class="article">目標は高くもつ</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｂ</td>
+		<td class="yes"><input type="radio" name="opq68y" value="2"></td>
+		<td class="no"><input type="radio" name="opq68n" value="2"></td>
+		<td class="article">ユニークな解決策を思いつく</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｃ</td>
+		<td class="yes"><input type="radio" name="opq68y" value="3"></td>
+		<td class="no"><input type="radio" name="opq68n" value="3"></td>
+		<td class="article">自分の考えに従って行動する</td>
+	</tr>
+	<tr>
+		<td class="alfabet">Ｄ</td>
+		<td class="yes"><input type="radio" name="opq68y" value="4"></td>
+		<td class="no"><input type="radio" name="opq68n" value="4"></td>
+		<td class="article">物事がうまくいくかどうか心配する</td>
+	</tr>
+</tbody></table>
+
+<div class="form">
+	<p>「上記の内容で送信する」を選択し、「送信」ボタンを押してください。<br><strong class="emphasis">「送信」後は受検完了のメッセージが出るまでブラウザの戻る、閉じる等の操作を行わないでください。</strong></p>
+	<p>
+		<select name="select">
+			<option value="0" selected="">まだ送信しない</option>
+			<option value="1">上記の内容で送信する</option>
+		</select>
+		<input type="submit" name="submit" value=" 送信 ">
+	</p>
+</div>
+<p id="copyright"><img src="3019114200footer.gif" alt="" width="800" height="50"></p>
+
+</form>
+</div>
+
+</body></html>
